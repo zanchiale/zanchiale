@@ -1,0 +1,44 @@
+# IMPORTING PYTHON PACKEGES #
+import requests
+import pandas as pd
+iimport json
+
+api_url="http://127.0.0.1:5000/data"
+
+# DEFINING A FUNCTION TO CALL THE API #
+def get_number_of_jobs_T(technology):
+    
+    payload = {"Key Skills":technology}     
+    r = requests.get(api_url,params=payload)
+    
+    if r.ok:
+        data = r.json()
+    
+    for jobs in data:
+        number_of_jobs = count(r.get(technology))
+    #your code goes here
+    return technology,number_of_jobs
+    
+##### FINAL PART (INCOMPLETE)    
+    
+# GETTING DATA FROM WEBSCRAPPING #    
+url = "https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-DA0321EN-SkillsNetwork/labs/datasets/Programming_Languages.html"
+
+import requests
+from bs4 import BeautifulSoup
+import html
+
+data = requests.get(url).text
+soup =  BeautifulSoup(data,"html.parser")
+table = soup.find_all('tr')
+
+for row in table.find_all('tr'): # in html table row is represented by the tag <tr>
+    
+    # Get all columns in each row.
+    cols = row.find_all('td') # in html a column is represented by the tag <td>
+    language = cols[1].getText() # store the value in column 3 as color_name
+    annual_avg_salary = cols[3].getText() # store the value in column 4 as color_code
+    
+    print("{}--->{}".format(language,annual_avg_salary))
+
+# INCOMPLETE #
