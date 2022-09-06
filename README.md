@@ -1,0 +1,6 @@
+- 🌱 I’m currently learning to become a Data Analyst
+- 👯 I’m looking to collaborate on any opportunity that appears.
+- 🤔 I’m looking for help with developing my codes and getting more professional
+- 📫 How to reach me: alebzanchi@gmail.com
+- ⚡ Fun fact: I started working with Finance.
+-->
